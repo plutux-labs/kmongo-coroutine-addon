@@ -215,3 +215,7 @@ infix fun <T> KProperty<T>.set(value: T): Bson = Updates.set(this.name, value)
 infix fun <T : Set<R>, R> KProperty<T>.addToSet(value: R): Bson = Updates.addToSet(this.name, value)
 
 infix fun <T> KProperty<T>.setOnInsert(value: T): Bson = Updates.setOnInsert(this.name, value)
+
+fun FindOneAndUpdateOptions.returnAfter() = returnDocument(ReturnDocument.AFTER)
+fun FindOneAndUpdateOptions.returnBefore() = returnDocument(ReturnDocument.BEFORE)
+fun FindOneAndUpdateOptions.upsert() = upsert(true)
