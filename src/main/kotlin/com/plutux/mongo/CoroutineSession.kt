@@ -29,7 +29,7 @@ suspend fun <T> MongoCollection<T>.withCoroutineSession() =
             } else this
         }
 
-suspend fun <T> ClientSession.coroutine(fn: suspend CoroutineScope.() -> T): T {
+suspend fun <T> ClientSession.useCoroutine(fn: suspend CoroutineScope.() -> T): T {
     return withContext(SessionElement(this)) {
         startTransaction()
         try {
