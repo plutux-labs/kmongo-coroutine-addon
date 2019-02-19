@@ -219,3 +219,7 @@ infix fun <T> KProperty<T>.setOnInsert(value: T): Bson = Updates.setOnInsert(thi
 fun FindOneAndUpdateOptions.returnAfter() = returnDocument(ReturnDocument.AFTER)
 fun FindOneAndUpdateOptions.returnBefore() = returnDocument(ReturnDocument.BEFORE)
 fun FindOneAndUpdateOptions.upsert() = upsert(true)
+
+fun FindOneAndReplaceOptions.returnAfter()= returnDocument(ReturnDocument.AFTER)
+fun FindOneAndReplaceOptions.returnBefore()= returnDocument(ReturnDocument.BEFORE)
+fun FindOneAndReplaceOptions.upsert()= upsert(true)
